@@ -8,6 +8,9 @@ public class Main {
             Blog blog = DataService.createBlogData();
 
             JaxbTransformer.javaToXml("blog.xml", blog);
+            Blog blogFromXml = (Blog)JaxbTransformer.xmlToJava("blog.xml", Blog.class);
+
+            System.out.println(blogFromXml);
         }
         catch (JAXBException ex) {
             System.out.println("Transformation error: " + ex.getMessage());

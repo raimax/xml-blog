@@ -61,10 +61,10 @@ public class User {
 
     @Override
     public String toString() {
-        String userString = "id: " + this.id + "\n"
-                + "username: " + this.username + "\n"
-                + "email: " + this.email + "\n"
-                + "joined at:" + this.joinedAt + "\n";
+        String userString = "\n\t\t\tid: " + this.id + "\n\t\t"
+                + "\tusername: " + this.username + "\n\t\t"
+                + "\temail: " + this.email + "\n\t\t"
+                + "\tjoined at:" + this.joinedAt;
 
         return userString;
     }

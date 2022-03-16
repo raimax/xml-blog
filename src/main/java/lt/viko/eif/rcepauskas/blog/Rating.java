@@ -34,4 +34,12 @@ public class Rating {
     public void setLiked(boolean liked) {
         isLiked = liked;
     }
+
+    @Override
+    public String toString() {
+        String ratingString = "\t\tuser: " + this.user.toString() + "\n\t"
+                + "\tis liked: " + this.isLiked + "\n\n";
+
+        return ratingString;
+    }
 }

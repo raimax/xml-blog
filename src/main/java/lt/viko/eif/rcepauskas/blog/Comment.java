@@ -57,4 +57,14 @@ public class Comment {
     public void setContent(String content) {
         this.content = content;
     }
+
+    @Override
+    public String toString() {
+        String commentString = "\t\tid: " + this.id + "\n\t"
+                + "\tauthor:" + this.author.toString() + "\n\t"
+                + "\tcreated at: " + this.createdAt + "\n\t"
+                + "\tcontent: " + this.content + "\n\n";
+
+        return commentString;
+    }
 }

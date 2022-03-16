@@ -43,12 +43,14 @@ public class Blog {
     public String toString() {
         String blogString = "";
 
+        blogString += "posts: \n";
         for (Post post : posts) {
-            blogString += post.toString();
+            blogString += post.toString() + "\n";
         }
 
+        blogString += "users: ";
         for (User user : users) {
-            blogString += user.toString();
+            blogString += user.toString() + "\n";
         }
 
         return blogString;

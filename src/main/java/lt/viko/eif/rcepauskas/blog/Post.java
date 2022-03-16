@@ -149,29 +149,30 @@ public class Post {
     public String toString() {
         String postString = "";
 
-        postString += "id: " + this.id + "\n"
-                + "title: " + this.title + "\n"
-                + "category: " + this.category + "\n"
-                + "author: " + this.author.getUsername() + "\n"
-                + "created at: " + this.createdAt + "\n"
-                + "summary: " + this.summary + "\n"
-                + "content: " + this.content + "\n"
-                + "views: " + this.views + "\n";
+        postString += "\tid: " + this.id + "\n"
+                + "\ttitle: " + this.title + "\n"
+                + "\tcategory: " + this.category + "\n"
+                + "\tauthor: " + this.author.getUsername() + "\n"
+                + "\tcreated at: " + this.createdAt + "\n"
+                + "\tsummary: " + this.summary + "\n"
+                + "\tcontent: " + this.content + "\n"
+                + "\tviews: " + this.views + "\n";
 
-        postString += "ratings: \n";
+        postString += "\tratings: \n";
         for (Rating rating : ratings) {
             postString += rating.toString();
         }
 
-        postString += "comments: \n";
+        postString += "\tcomments: \n";
         for (Comment comment : comments) {
             postString += comment.toString();
         }
 
-        postString += "tags: ";
+        postString += "\ttags: ";
         for (String tag : tags) {
             postString += tag + " ";
         }
+        postString += "\n";
 
         return postString;
     }
