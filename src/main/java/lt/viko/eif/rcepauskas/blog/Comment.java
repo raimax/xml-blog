@@ -5,6 +5,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import java.util.Date;
 
+/**
+ * A class that stores user's comment data
+ */
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Comment {
 

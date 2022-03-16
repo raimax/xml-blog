@@ -3,8 +3,15 @@ package lt.viko.eif.rcepauskas.blog;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A class used to generate data for the blog
+ */
 public class DataService {
 
+    /**
+     * Creates users and posts for the blog
+     * @return {@link Blog} object with data
+     */
     public static Blog createBlogData() {
         Blog blog = new Blog();
         blog.setPosts(createPosts());
@@ -17,18 +24,16 @@ public class DataService {
         List<Post> posts = new ArrayList<>();
 
         Post post1 = new Post(1, "title1", "lifestyle", new User(1, "admin", "admin@site.com"), 132);
-        post1.setContent("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae lectus porttitor, " +
+        post1.setContentWithSummary("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae lectus porttitor, " +
                 "scelerisque augue eu, vehicula metus. Class aptent taciti sociosqu ad litora torquent per conubia " +
                 "nostra, per inceptos himenaeos.");
-        post1.setSummary(post1.getContent().substring(0, 20) + "...");
         post1.setComments(createComments());
         post1.setRatings(createRatings());
         post1.setTags(createTags());
 
         Post post2 = new Post(2, "title2", "travel", new User(1, "admin", "admin@site.com"), 367);
-        post2.setContent("Vestibulum facilisis feugiat risus sit amet consequat. Donec sodales massa et magna molestie " +
+        post2.setContentWithSummary("Vestibulum facilisis feugiat risus sit amet consequat. Donec sodales massa et magna molestie " +
                 "pellentesque id sed diam. Sed lobortis consequat condimentum.");
-        post2.setSummary(post1.getContent().substring(0, 20) + "...");
         post2.setComments(createComments());
         post2.setRatings(createRatings());
         post2.setTags(createTags());
@@ -72,7 +77,7 @@ public class DataService {
         List<Rating> ratings = new ArrayList<>();
 
         ratings.add(new Rating(new User(1, "admin", "admin@site.com"), true));
-        ratings.add(new Rating(new User(2, "user456", "user456@gamil.com"), false));
+        ratings.add(new Rating(new User(2, "user456", "user456@gmail.com"), false));
         ratings.add(new Rating(new User(3, "user884", "user884@mail.com"), true));
 
         return ratings;

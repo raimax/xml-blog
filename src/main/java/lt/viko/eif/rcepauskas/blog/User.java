@@ -5,6 +5,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import java.util.Date;
 
+/**
+ * A class that stores user's data
+ */
 @XmlAccessorType(XmlAccessType.FIELD)
 public class User {
 
@@ -54,5 +57,15 @@ public class User {
 
     public void setJoinedAt(Date joinedAt) {
         this.joinedAt = joinedAt;
+    }
+
+    @Override
+    public String toString() {
+        String userString = "id: " + this.id + "\n"
+                + "username: " + this.username + "\n"
+                + "email: " + this.email + "\n"
+                + "joined at:" + this.joinedAt + "\n";
+
+        return userString;
     }
 }

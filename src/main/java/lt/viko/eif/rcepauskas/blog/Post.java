@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * A class that stores blog post's data
+ */
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Post {
 
@@ -43,6 +46,15 @@ public class Post {
         this.author = author;
         this.createdAt = new Date();
         this.views = views;
+    }
+
+    /**
+     * Sets blog's content and automatically creates summary based on that content
+     * @param content blog's content
+     */
+    public void setContentWithSummary(String content) {
+        this.content = content;
+        setSummary(content.substring(0, 40) + "...");
     }
 
     public Integer getId() {
@@ -131,5 +143,36 @@ public class Post {
 
     public void setRatings(List<Rating> ratings) {
         this.ratings = ratings;
+    }
+
+    @Override
+    public String toString() {
+        String postString = "";
+
+        postString += "id: " + this.id + "\n"
+                + "title: " + this.title + "\n"
+                + "category: " + this.category + "\n"
+                + "author: " + this.author.getUsername() + "\n"
+                + "created at: " + this.createdAt + "\n"
+                + "summary: " + this.summary + "\n"
+                + "content: " + this.content + "\n"
+                + "views: " + this.views + "\n";
+
+        postString += "ratings: \n";
+        for (Rating rating : ratings) {
+            postString += rating.toString();
+        }
+
+        postString += "comments: \n";
+        for (Comment comment : comments) {
+            postString += comment.toString();
+        }
+
+        postString += "tags: ";
+        for (String tag : tags) {
+            postString += tag + " ";
+        }
+
+        return postString;
     }
 }

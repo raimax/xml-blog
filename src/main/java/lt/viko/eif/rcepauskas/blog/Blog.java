@@ -4,6 +4,9 @@ import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A class that holds blog's user and post data
+ */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Blog {
@@ -34,5 +37,20 @@ public class Blog {
 
     public void setUsers(List<User> users) {
         this.users = users;
+    }
+
+    @Override
+    public String toString() {
+        String blogString = "";
+
+        for (Post post : posts) {
+            blogString += post.toString();
+        }
+
+        for (User user : users) {
+            blogString += user.toString();
+        }
+
+        return blogString;
     }
 }
