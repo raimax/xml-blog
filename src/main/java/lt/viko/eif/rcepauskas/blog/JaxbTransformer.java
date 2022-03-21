@@ -19,7 +19,7 @@ public class JaxbTransformer {
      * @param object object to convert from
      * @throws JAXBException
      */
-    public static void javaToXml(String fileName, Object object) throws JAXBException {
+    public static void pojoToXml(String fileName, Object object) throws JAXBException {
         jaxbContext = JAXBContext.newInstance(object.getClass());
         Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
         jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
@@ -34,7 +34,7 @@ public class JaxbTransformer {
      * @return specified tClass object with data
      * @throws JAXBException
      */
-    public static <T> Object xmlToJava(String filePath, Class<T> tClass) throws JAXBException {
+    public static <T> Object xmlToPojo(String filePath, Class<T> tClass) throws JAXBException {
         jaxbContext = JAXBContext.newInstance(tClass);
         Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
         return jaxbUnmarshaller.unmarshal(new File(filePath));

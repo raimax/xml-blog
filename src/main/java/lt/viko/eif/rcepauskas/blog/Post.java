@@ -49,7 +49,7 @@ public class Post {
     }
 
     /**
-     * Sets blog's content and automatically creates summary based on that content
+     * Sets blogs content and automatically creates summary based on that content
      * @param content blog's content
      */
     public void setContentWithSummary(String content) {

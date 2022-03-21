@@ -7,8 +7,8 @@ public class Main {
         try {
             Blog blog = DataService.createBlogData();
 
-            JaxbTransformer.javaToXml("blog.xml", blog);
-            Blog blogFromXml = (Blog)JaxbTransformer.xmlToJava("blog.xml", Blog.class);
+            JaxbTransformer.pojoToXml("blog.xml", blog);
+            Blog blogFromXml = (Blog)JaxbTransformer.xmlToPojo("blog.xml", Blog.class);
 
             //System.out.println(blogFromXml);
         }
