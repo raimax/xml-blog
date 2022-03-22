@@ -10,7 +10,7 @@ public class Main {
             JaxbTransformer.pojoToXml("blog.xml", blog);
             Blog blogFromXml = (Blog)JaxbTransformer.xmlToPojo("blog.xml", Blog.class);
 
-            //System.out.println(blogFromXml);
+            System.out.println(blogFromXml);
         }
         catch (JAXBException ex) {
             System.out.println("Transformation error: " + ex.getMessage());
