@@ -54,7 +54,12 @@ public class Post {
      */
     public void setContentWithSummary(String content) {
         this.content = content;
-        setSummary(content.substring(0, 40) + "...");
+        if (content.length() >= 40) {
+            setSummary(content.substring(0, 40) + "...");
+        }
+        else {
+            this.setSummary(content);
+        }
     }
 
     public Integer getId() {

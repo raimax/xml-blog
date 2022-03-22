@@ -10,7 +10,7 @@ public class DataService {
 
     /**
      * Creates users and posts for the blog
-     * @return {@link Blog} object with data
+     * @return {@link Blog} object with generated data
      */
     public static Blog createBlogData() {
         Blog blog = new Blog();
