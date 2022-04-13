@@ -20,7 +20,7 @@ public class DataService {
         return blog;
     }
 
-    private static List<Post> createPosts() {
+    public static List<Post> createPosts() {
         List<Post> posts = new ArrayList<>();
 
         Post post1 = new Post(1, "title1", "lifestyle", new User(1, "admin", "admin@site.com"), 132);
@@ -44,7 +44,7 @@ public class DataService {
         return posts;
     }
 
-    private static List<User> createUsers() {
+    public static List<User> createUsers() {
         List<User> users = new ArrayList<>();
 
         users.add(new User(1, "admin", "admin@site.com"));
